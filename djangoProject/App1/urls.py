@@ -7,4 +7,6 @@ from django.conf.urls import url
 urlpatterns = [
     url('^$', views.index),
     url(r'^(\d+)/$', views.detail),
+    url(r'^grades/$',views.grades),
+    url(r'^students/$', views.students),
 ]
