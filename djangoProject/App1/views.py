@@ -18,7 +18,11 @@ def grades(request):
     gradelist = Grades.objects.all()
     return render(request, 'App1/grades.html', {"grades": gradelist})
 
-
 def students(request):
     studentslist = Students.objects.all()
     return render(request, 'App1/students.html', {"students": studentslist})
+
+def gradesStudents(request,id):
+    grades=Grades.objects.get(pk=id)
+    stus = grades.students_set.all()
+    return render(request,'App1/students.html',{'students':stus})
