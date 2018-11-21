@@ -11,7 +11,7 @@ class Grades(models.Model):
     boynum = models.IntegerField()
     isDelete = models.BooleanField(default=False)
     def __str__(self):
-        return '[grade] name:{0},date:{1},girlnum:{2},boynum:{3}'.format(self.name,self.date,self.girlnum,self.boynum)
+        return self.name
 
 
 class Students(models.Model):
@@ -24,5 +24,5 @@ class Students(models.Model):
     grade = models.ForeignKey('Grades',on_delete=models.CASCADE)
 
     def __str__(self):
-        return '[student] name:{0},gender:{1},age:{2},content:{3},grade:{4}'.format(self.name,self.gender,self.age,self.content,self.grade)
+        return self.name
 
