@@ -4,5 +4,9 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+
 def index(request):
     return HttpResponse("test view index")
+
+def detail(request,num):
+    return HttpResponse('detail:{0}'.format(num))
