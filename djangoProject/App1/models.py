@@ -13,6 +13,9 @@ class Grades(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta():
+        db_table="grades"
+
 
 class Students(models.Model):
     name = models.CharField(max_length=20)
@@ -26,3 +29,9 @@ class Students(models.Model):
     def __str__(self):
         return self.name
 
+    #设置元信息
+    class Meta():
+        #数据库表名
+        db_table="students"
+        #对象默认的排序字段
+        # ordering=['id'] #['-id']降序
