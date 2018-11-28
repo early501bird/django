@@ -23,7 +23,7 @@ class GradesAdmin(admin.ModelAdmin):
     # 分页
     list_per_page = 5
     # 添加/修改属性的顺序
-    fields = ['name','boynum','girlnum','isDelete']
+    fields = ['name','boynum','girlnum','date','isDelete']
     # 给属性分组，注意field与fieldsets不能同时使用
     # fieldsets = [
     #     ('num', {'fields': ['girlnum', 'boynum''']}),
@@ -40,9 +40,8 @@ class StudentsAdmin(admin.ModelAdmin):
         if self.gender : return '男'
         else: return '女'
     gender.short_description = '性别'
-    list_display = ['pk', 'name', 'age', gender, 'content', 'grade', 'isDelete']
+    list_display = ['pk', 'name', 'age', gender, 'content', 'grade', 'isDelete','lastTime','createTime']
     list_per_page = 10
-
     #执行动作的位置
     actions_on_bottom = True
     actions_on_top = False
