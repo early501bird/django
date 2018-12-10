@@ -74,6 +74,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'myProject.db'),
         'NAME': os.path.join(BASE_DIR, 'studyViews.db'),
         # "NAME":"",数据库名
         # "USER":"",数据库用户
